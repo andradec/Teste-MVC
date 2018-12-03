@@ -24,7 +24,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Estilo)
+            @Html.DisplayFor(model => model.Estilo.Descricao)
         </dd>
 
         <dt>
@@ -39,7 +39,7 @@
 
     @using (Html.BeginForm())
     {
-        @*@Html.AntiForgeryToken()*@
+        @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <input type="submit" value="Excluir" class="btn btn-danger" />

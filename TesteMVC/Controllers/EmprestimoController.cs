@@ -75,7 +75,7 @@ namespace TesteMVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EmprestimoID,AmigoID,JogoID,Data")] Emprestimo emprestimo)
-        {//TODO:ModelState
+        {
             if (ModelState.IsValid)
             {
                 db.Emprestimos.Add(emprestimo);

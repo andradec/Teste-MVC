@@ -15,7 +15,13 @@ namespace TesteMVC.Controllers
         public ActionResult Index()
         {
             //db.Sexos.ToList()
-            return View(db.Sexos.ToList());
+            //db.Sexos.ToList()
+            var sexos = db.Sexos.ToList();
+            if(sexos == null || !sexos.Any())
+            {
+                sexos.Add(new Sexo());
+            }
+            return View(sexos);
         }
 
         //GET: Sexo/Create
@@ -68,7 +74,6 @@ namespace TesteMVC.Controllers
             }
             base.Dispose(disposing);
         }
-
 
     }
 }

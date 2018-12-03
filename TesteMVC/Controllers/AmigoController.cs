@@ -38,13 +38,16 @@ namespace TesteMVC.Controllers
         // GET: Amigo/Create
         public ActionResult Create()
         {
+            ViewBag.SexoId = new SelectList(db.Sexos.ToList(), "Id", "Descricao");
+
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Celular")] Amigo amigo)
+        public ActionResult Create([Bind(Include = "Id,Nome,Celular,SexoId,Rua,Cep,Bairro,Numero,Cidade,Cpf")] Amigo amigo)
         {
+            ViewBag.SexoId = new SelectList(db.Sexos.ToList(), "Id", "Descricao");
             if (ModelState.IsValid)
             {
                 db.Amigos.Add(amigo);
@@ -58,6 +61,7 @@ namespace TesteMVC.Controllers
         // GET: Amigo/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.SexoId = new SelectList(db.Sexos.ToList(), "Id", "Descricao");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -72,10 +76,11 @@ namespace TesteMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Celular")] Amigo amigo)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Celular,SexoId,Rua,Cep,Bairro,Numero,Cidade,Cpf")] Amigo amigo)
         {
+            ViewBag.SexoId = new SelectList(db.Sexos.ToList(), "Id", "Descricao");
             if (ModelState.IsValid)
-            {//TODO: METER A MAO
+            {
                 db.Entry(amigo).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -86,6 +91,7 @@ namespace TesteMVC.Controllers
         // GET: Amigo/Delete/5
         public ActionResult Delete(int? id)
         {
+            ViewBag.SexoId = new SelectList(db.Sexos.ToList(), "Id", "Descricao");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

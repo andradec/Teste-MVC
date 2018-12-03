@@ -38,6 +38,7 @@ namespace TesteMVC.Controllers
         // GET: Jogo/Create
         public ActionResult Create()
         {
+            ViewBag.EstiloId = new SelectList(db.Estilo.ToList(), "Id", "Descricao");
             return View();
         }
 
@@ -45,8 +46,9 @@ namespace TesteMVC.Controllers
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]        
-        public ActionResult Create([Bind(Include = "Id,Titulo,Estilo,Lancamento")] Jogo Jogo)
+        public ActionResult Create([Bind(Include = "Id,Titulo,EstiloId,Lancamento")] Jogo Jogo)
         {
+            ViewBag.EstiloId = new SelectList(db.Estilo.ToList(), "Id", "Descricao");
             if (ModelState.IsValid)
             {
                 db.Jogos.Add(Jogo);
@@ -59,6 +61,7 @@ namespace TesteMVC.Controllers
 
         public ActionResult Edit(int? id)
         {
+            ViewBag.EstiloId = new SelectList(db.Estilo.ToList(), "Id", "Descricao");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -75,8 +78,9 @@ namespace TesteMVC.Controllers
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]        
-        public ActionResult Edit([Bind(Include = "Id,Titulo,Estilo,Lancamento")] Jogo Jogo)
+        public ActionResult Edit([Bind(Include = "Id,Titulo,EstiloId,Lancamento")] Jogo Jogo)
         {
+            ViewBag.EstiloId = new SelectList(db.Estilo.ToList(), "Id", "Descricao");
             if (ModelState.IsValid)
             {
                 db.Entry(Jogo).State = EntityState.Modified;
@@ -89,6 +93,7 @@ namespace TesteMVC.Controllers
         // GET: Jogo/Delete/5
         public ActionResult Delete(int? id)
         {
+            ViewBag.EstiloId = new SelectList(db.Estilo.ToList(), "Id", "Descricao");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
