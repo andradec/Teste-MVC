@@ -1,0 +1,32 @@
+﻿@model TesteMVC.Models.Estilo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você deseja apagar esse Estilo ?</h3>
+<div>
+    <h4>Estilo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+        </div>
+        <br />
+        <div>
+            <a href="@Url.Action("Index", "Estilo")" class="btn btn-warning">
+                Ver Lista de Jogos
+                <span class="glyphicon glyphicon-search"></span>
+            </a>
+        </div>
+    }
+</div>
+

@@ -1,0 +1,33 @@
+﻿@model TesteMVC.Models.Estilo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Estilos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+    </dl>
+</div>
+<p>
+    <div>
+        <a href="@Url.Action("Edit", "Estilo", new { id = Model.Id })" class="btn btn-info">
+            Editar
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+        </a>
+    </div>
+    <br />
+    <div>
+        <a href="@Url.Action("Index", "Estilo")" class="btn btn-warning">
+            Ver Lista de Estilos
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </a>
+    </div>
+</p>
+

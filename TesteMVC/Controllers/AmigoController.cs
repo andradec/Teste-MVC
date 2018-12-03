@@ -83,6 +83,7 @@ namespace TesteMVC.Controllers
             return View(amigo);
         }
 
+        // GET: Amigo/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -47,10 +47,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -144,6 +146,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AmigoController.cs" />
     <Compile Include="Controllers\EmprestimoController.cs" />
+    <Compile Include="Controllers\EstiloController.cs" />
     <Compile Include="Controllers\JogoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SexoController.cs" />
@@ -151,9 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803241058278_bd.cs" />
-    <Compile Include="Migrations\201803241058278_bd.Designer.cs">
-      <DependentUpon>201803241058278_bd.cs</DependentUpon>
+    <Compile Include="Migrations\201812031528351_initial.cs" />
+    <Compile Include="Migrations\201812031528351_initial.Designer.cs">
+      <DependentUpon>201812031528351_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Amigo.cs" />
@@ -271,11 +274,13 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Sexo\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803241058278_bd.resx">
-      <DependentUpon>201803241058278_bd.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\Estilo\index.cshtml" />
+    <Content Include="Views\Estilo\Create.cshtml" />
+    <Content Include="Views\Estilo\Details.cshtml" />
+    <Content Include="Views\Estilo\Edit.cshtml" />
+    <Content Include="Views\Estilo\Delete.cshtml" />
+    <Content Include="Views\Sexo\Create.cshtml" />
+    <Content Include="Views\Sexo\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -290,7 +295,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Estilo\" />
+    <EmbeddedResource Include="Migrations\201812031528351_initial.resx">
+      <DependentUpon>201812031528351_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

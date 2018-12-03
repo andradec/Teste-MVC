@@ -15,6 +15,7 @@ namespace TesteMVC.Models
         public DbSet<Amigo> Amigos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Sexo> Sexos { get; set; }
+        public DbSet<Estilo> Estilo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

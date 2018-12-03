@@ -44,8 +44,7 @@ namespace TesteMVC.Controllers
         // POST: Jogo/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost]        
         public ActionResult Create([Bind(Include = "Id,Titulo,Estilo,Lancamento")] Jogo Jogo)
         {
             if (ModelState.IsValid)
@@ -75,8 +74,7 @@ namespace TesteMVC.Controllers
         // POST: Jogo/Edit/5
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost]        
         public ActionResult Edit([Bind(Include = "Id,Titulo,Estilo,Lancamento")] Jogo Jogo)
         {
             if (ModelState.IsValid)

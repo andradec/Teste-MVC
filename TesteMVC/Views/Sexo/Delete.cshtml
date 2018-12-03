@@ -1,0 +1,33 @@
+﻿@model TesteMVC.Models.Sexo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Excluir</h2>
+
+<h3>Voce deseja apagar este Sexo ?</h3>
+<div>
+    <h4>Sexo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+        </div>
+        <br />
+        <div>
+            <a href="@Url.Action("Index", "Sexo")" class="btn btn-warning">
+                Ver Lista de Sexos
+                <span class="glyphicon glyphicon-search"></span>
+            </a>
+        </div>
+    }
+</div>
+
+
